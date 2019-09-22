@@ -1,22 +1,35 @@
-new Vue({
-  el: '#vue-app',
+var one = new Vue({
+  el: '#vue-app-one',
   data: {
-    health: 100,
-    ended: false,
+    title: 'vue app one',
   },
   methods: {
-    punch: function() {
-      this.health -= 10;
-      if (0 >= this.health) {
-        this.ended = true;
-      }
-    },
-    restart: function () {
-      this.health = 100;
-      this.ended = false;
-    },
+
   },
   computed: {
-
+    greet: function () {
+      return 'hello from app one';
+    }
   }
 });
+
+var two = new Vue({
+  el: '#vue-app-two',
+  data: {
+    title: 'vue app two',
+
+  },
+  methods: {
+    changeTitle: function () {
+      one.title = 'title changed';
+    }
+  },
+  computed: {
+    greet: function () {
+      return 'hello from app two';
+    }
+  }
+});
+
+
+two.title = "changed from outside";

@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <HelloWorld />
-    <ninjas />
+    <app-header></app-header>
+    <app-footer></app-footer>
+    <ninjas></ninjas>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import Ninjas from './components/Ninjas.vue';
+
 
 export default {
-  name: 'app',
   components: {
-    HelloWorld
+    'app-header': Header,
+    'app-footer': Footer,
+    'ninjas': Ninjas,
+  },
+  data() {
+    return {
+
+    }
   }
 }
 </script>

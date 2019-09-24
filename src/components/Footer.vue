@@ -1,29 +1,30 @@
 <template>
-  <footer>
-    <p>{{ copyright }}</p>
-  </footer>
+    <footer>
+        <p>Copyright 2017 {{ title }}</p>
+    </footer>
 </template>
-
 <script>
-import Ninjas from './Ninjas.vue'
-
 export default {
-  data() {
-    return {
-      copyright: 'Copyright 2017 Vue Ninjas',
+    props: {
+      title: {
+        type: String,
+        required: true
+      }
+    },
+    data(){
+        return{
+
+        }
     }
-  }
 }
 </script>
-
 <style scoped>
-
 footer{
-  background: #222;
-  padding: 6px;
+    background: #222;
+    padding: 6px;
 }
 p{
-  color: lightgreen;
-  text-align: center;
+        color: lightgreen;
+        text-align: center;
 }
 </style>

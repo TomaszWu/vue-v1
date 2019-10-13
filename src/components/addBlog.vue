@@ -58,11 +58,7 @@ export default {
     },
     methods: {
       post: function() {
-        this.$http.post('http://jsonplaceholder.typicode.com/posts', {
-          title: this.blog.title,
-          body: this.blog.content,
-          userID: 1,
-        }).then((data) => {
+        this.$http.post('https://vue-ninja-33a23.firebaseio.com/posts.json', this.blog).then((data) => {
           console.log(data);
           this.submitted = true;
         })
